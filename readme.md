@@ -6,7 +6,7 @@
 仿真器需要渲染整个自动驾驶所需要的环境，为了保证足够的帧率，对系统的配置要求如下。  
 * 4GHz四核CPU
 * Nvidia GTX 1080 (8GB memory)
-* Windows 10 64 bit
+* Windows 10 64 bit  
 对于操作系统采用windows更好，如果是linux也可以运行，效率可能会低一点。  
 
 有2种方式来运行仿真器，一种是直接下来编译好的二进制文件，另外也可以自己下载源码后进行编译。后一种方式在你需要做一定的定制开发的时候，比较有用，如果你只是想尝试下这款仿真器，可以直接下载最新的发布[版本](https://github.com/lgsvl/simulator/releases/tag/2020.05)  
@@ -38,7 +38,7 @@
 
 ## 仿真器介绍
 1. 启动仿真器之后，你会看见“打开浏览器”的按钮，点击按钮之后会出现web界面。  
-2. 在侧边栏选择仿真器，并且选择需要运行的地图和车辆。一个推荐的配置是地图选择"BorregasAve"，车辆选择"Jaguar2015XE (Apollo 5.0)"，然后点击运行。
+2. 在侧边栏选择仿真器，并且选择需要运行的地图和车辆。一个推荐的配置是地图选择"BorregasAve"，车辆选择"Jaguar2015XE (Apollo 5.0)"，然后点击运行。  
 3. 车辆将出现在选择好的仿真地图中，你可以通过快捷键(← ↑ ↓ → )来控制车辆，并且切换视角，完整的快捷键在[这里](https://www.lgsvlsimulator.com/docs/keyboard-shortcuts/)  
 4. 如果需要和autoware、Apollo系统一起仿真，可以分别参考[autoware](https://github.com/lgsvl/Autoware)和[apollo5.0](https://github.com/lgsvl/apollo-5.0)  
 
@@ -126,7 +126,7 @@
 ## Apollo侧
 Apollo侧的编译和安装这里就不介绍了，下面主要介绍如何和仿真器进行对接。  
 1. 下载对应的高精度地图到"apollo/modules/map/data"目录中
-2. 添加桥接部分的代码(bridge.sh)
+2. 添加桥接部分的代码(bridge.sh)  
 
 ## 和仿真器对接过程
 执行完成上述部署之后，apollo侧的准备工作就已经完成了，下面我们主要看下如何利用仿真器和Apollo进行对接。  
@@ -137,7 +137,7 @@ Apollo侧的编译和安装这里就不介绍了，下面主要介绍如何和�
 2. 在web界面中选择添加好的仿真器（已经选择好对应的地图和车，以及和apollo进行桥接的端口"localhost:9090"）
 3. (可选)选择是否添加NPC车辆和行人
 4. (可选)选择天气情况
-5. 启动仿真器
+5. 启动仿真器  
 
 #### 启动apollo
 1. 运行"bootstrap.sh"启动dreamview
@@ -145,5 +145,9 @@ Apollo侧的编译和安装这里就不介绍了，下面主要介绍如何和�
 3. 在dreamview中选择地图和车，这里选择的地图要和仿真器中的地图一致。打开Localization, Transform, Perception, Traffic Light, Planning, Prediction, Routing和Control模块。  
 4. 在Route Editing选择routing路径，并且提交。  
 5. 查看仿真器中的汽车运行状态。  
+
+下图是最终运行的效果。  
+![sim](img/apollo-sim.png)  
+
 
 
